@@ -1,0 +1,29 @@
+# Generated datasets, databases, and run logs
+data/
+reports/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Local configuration
+.env
+.idea/
+.vscode/
+.DS_Store
+
+# Spark local files
+spark-warehouse/
+metastore_db/
+derby.log

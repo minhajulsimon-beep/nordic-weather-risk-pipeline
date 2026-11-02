@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nordic-weather-risk-pipeline"
+version = "0.1.0"
+description = "Historical weather ETL using Python, PySpark, SQL, and a lightweight dashboard"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Mohammed Minhajul Islam Saimon"}]
+dependencies = [
+  "pyspark==4.0.1",
+  "requests>=2.32,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+dashboard = ["streamlit>=1.43,<2", "pandas>=2.2,<3"]
+postgres = ["psycopg[binary]>=3.2,<4"]
+
+[project.scripts]
+weather-risk = "weather_risk.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
