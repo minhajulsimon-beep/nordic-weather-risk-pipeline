@@ -1,10 +1,8 @@
-# Interview talking points (only claim what you have actually run)
 
-## 45-second project walkthrough
 
 > I built a historical weather ETL project to explore conditions that could matter to logistics operations across four Danish cities. The ingestion layer requests historical temperature, wind and precipitation from Open-Meteo. I used PySpark for schema validation and a Bronze/Silver/Gold approach, added explainable rule-based weather flags, and stored daily results in a SQL table with a composite primary key. The upsert means the same historical period can be processed again without duplicate records. I also provided SQL analysis queries, a Streamlit dashboard, and tests that run automatically in GitHub Actions. It's historical analytics, not an operational prediction model.
 
-## Good technical questions to be ready for
+
 
 **Why PySpark when there are only four cities?**
 I intentionally used a modest, inspectable dataset to learn and demonstrate the distributed DataFrame API, schemas, aggregations and Parquet formats. I would use plain Python or SQL for a tiny real-world workload to avoid Spark overhead. For growth, I'd parameterize the geography, shard API requests, and use a distributed warehouse/JDBC sink.
@@ -21,7 +19,6 @@ The weights and thresholds are illustrative rules. A trustworthy logistics risk 
 **What's next?**
 Use a workflow orchestrator for scheduled daily refreshes; use Delta Lake/Iceberg with atomic snapshots; replace driver-side upsert with distributed writes; include observability metrics and CI validation against a PostgreSQL service.
 
-## Demo order for recruiters
 
 1. Open the project's GitHub README and point to the architecture diagram.
 2. Run `weather-risk run --demo --days 30` and explain that the input is **synthetic**.
