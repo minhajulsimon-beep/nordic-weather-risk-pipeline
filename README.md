@@ -29,6 +29,13 @@ The pipeline stores a copy of each API response before processing it. The API re
 
 SQL loads use `ON CONFLICT DO UPDATE` with `(city, record_date)` as the primary key, so rerunning a date range updates existing records rather than creating duplicates.
 
+## Dashboard
+
+![Nordic Weather Risk Analytics Dashboard](assets/dashboard-real-data.png)
+
+Interactive Streamlit dashboard displaying 90 days of historical
+ERA5 weather data across Aarhus, Copenhagen, Odense, and Aalborg.
+
 ## Run the project
 
 Requires Python 3.11 or 3.12 and Java 17. The commands below work in a Linux environment such as GitHub Codespaces with Python 3.12 available.
